@@ -1,0 +1,12 @@
+<app-genre-filter (genreSelected)="onGenreChange($event)"></app-genre-filter>
+
+<div *ngIf="movies && movies.length">
+  <mat-grid-list cols="4" rowHeight="350px">
+    <mat-grid-tile *ngFor="let movie of movies">
+      <img [src]="getImageUrl(movie.poster_path)" alt="{{ movie.title }}"/>
+      <mat-grid-tile-footer>
+        <h3>{{ movie.title }}</h3>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
